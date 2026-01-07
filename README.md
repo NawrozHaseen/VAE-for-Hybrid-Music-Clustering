@@ -41,7 +41,6 @@ Create and activate a Virtual Environment:
 ```bash
 python -m venv .venv
 .venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
 ```
 
 ## Install Dependencies:
@@ -83,15 +82,15 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 - `Metadata`: data/fma_metadata/ (e.g., tracks.csv, genres.csv)
 
-- `Manifest`: data/fma_manifest_3k_5genres.csv
+- `Manifest`: data/fma_manifest_3k_6genres.csv
 
 - `Lyrics files`: data/lyrics/
 
 **Results**:
 
-`data/fma_manifest_3k_5genres.csv`: Manifest with audio and genre metadata
+`data/fma_manifest_3k_6genres.csv`: Manifest with audio and genre metadata
 
-`data/fma_manifest_3k_5genres_lyrics.csv`: Updated manifest with lyrics
+`data/fma_manifest_3k_6genres_lyrics.csv`: Updated manifest with lyrics
 
 `results/kmeans_vae/labels_vae_kmeans.npy`: KMeans clustering labels
 
