@@ -59,81 +59,152 @@ Download the FMA dataset and other required data using:
 ```bash
 python scripts/00_download_fma.py
 ```
-This will download the audio and metadata files, and prepare the data/fma_manifest_3k_5genres.csv manifest.
+This will download the audio and metadata files, and prepare the data/fma_manifest_3k_6genres.csv manifest.
 
-# Data Files
-The following files are used in the project:
+# Task Types Overview
 
-- **Audio Files**: Located in data/fma_small/ (e.g., 000/000002.mp3)
+The project is divided into three main task types: Easy, Medium, and Hard. These tasks represent different stages of data processing, feature extraction, model training, and evaluation. Below are the task scripts for each type and the corresponding data/results/model files generated.
 
-- **Metadata**: Located in data/fma_metadata/ (e.g., tracks.csv, genres.csv)
+# Easy Tasks (Scripts 00-09)
 
-- **Manifest**: Located in data/fma_manifest_3k_6genres.csv
+**Tasks**:
 
-- **Lyrics Files**: Located in data/lyrics/
+- `Data Download and Manifest Creation`: Download audio files and metadata, and create a manifest.
 
-# Training Models
-To train the models, use the following scripts:
+- `Feature Extraction`: Extract basic audio features like MFCC and lyrics embeddings.
 
-# Basic VAE:
-Train a basic VAE model using:
+- `Basic VAE Training and Clustering`: Train a basic VAE model and perform clustering using the learned latents.
 
+- `Script Range`: Scripts 00-09
 
-python scripts/06_train_basic_vae_easy.py
+Data Files:
 
-Multimodal VAE (Audio + Lyrics):
+Audio files: data/fma_small/ (e.g., 000/000002.mp3)
 
-# Train a multimodal VAE with audio and lyrics embeddings using:
+Metadata: data/fma_metadata/ (e.g., tracks.csv, genres.csv)
 
-python scripts/19_train_beta_cvae_multimodal_hard.py
+Manifest: data/fma_manifest_3k_5genres.csv
 
-# Clustering:
-Run clustering (e.g., KMeans) on the learned latent representations:
+Lyrics files: data/lyrics/
 
-python scripts/20_cluster_and_evaluate_hard.py
+Results:
 
-# Visualizations:
-Visualize the clustering results:
+data/fma_manifest_3k_5genres.csv: Manifest with audio and genre metadata
 
+data/fma_manifest_3k_5genres_lyrics.csv: Updated manifest with lyrics
 
-python scripts/21_visualize_latent_and_distributions_hard.py
+results/kmeans_vae/labels_vae_kmeans.npy: KMeans clustering labels
 
-# Comparison with Baselines:
-Compare the VAE-based models with baseline methods (PCA, Autoencoder):
+results/viz_vae/plots/vae_tsne.png: t-SNE visualization of clusters
 
-python scripts/22_compare_with_baselines_hard.py
+results/viz_vae/plots/vae_umap.png: UMAP visualization of clusters
 
-# Result Files
-The project generates several important result files:
+Model:
 
-Clustering Metrics: Located in results/hard/baseline_comparison.csv
+results/vae_basic/vae_basic.pt: Trained VAE model
 
-Model Latents: Located in data/hard/latents_mu.npy
+Medium Tasks (Scripts 10-17)
 
-Training Plots: Located in results/hard/plots/
+Tasks:
 
-training_curve.png: Shows training loss over epochs
+Feature Extraction: Extract audio features for CNN-based models (e.g., log-mel spectrograms).
 
-recon_examples.png: Shows reconstruction examples
+Lyrics Embedding: Generate lyrics embeddings using Sentence-Transformers or fallback methods.
 
-# Visualizations
-The following visualizations are generated:
+Multimodal VAE Training: Train a multimodal VAE (combining audio and lyrics embeddings).
 
-Latent Space 2D Projection: Using UMAP or t-SNE.
+Clustering and Evaluation: Perform clustering (e.g., KMeans, Agglomerative) on multimodal features and evaluate the results.
 
-latent_by_cluster.png
+Script Range: Scripts 10-17
 
-latent_by_genre.png
+Data Files:
 
-latent_by_language.png
+data/audio_cnn_mel_X.npy: Log-mel spectrogram features (audio)
 
-# Cluster Distributions:
+data/lyrics_embeddings.npy: Lyrics embeddings
 
-cluster_dist_over_genres.png
+data/fma_manifest_combined_text_only_clean.csv: Combined manifest
 
-cluster_dist_over_languages.png
+Results:
 
-# How to Use the Scripts
+results/medium_clustering_metrics_all.csv: Clustering metrics for all representations
+
+results/report_medium/plot_silhouette.png: Silhouette score plot
+
+results/report_medium/plot_davies_bouldin.png: Davies–Bouldin index plot
+
+results/report_medium/plot_ari.png: ARI plot
+
+results/report_medium/dbscan_noise_vs_eps_<rep>.png: DBSCAN noise vs. eps plot
+
+results/report_medium/dbscan_clusters_vs_eps_<rep>.png: DBSCAN clusters vs. eps plot
+
+Model:
+
+models/vae_conv_mm_medium/vae_conv_mm_medium.pt: Trained multimodal VAE model
+
+Hard Tasks (Scripts 18-22)
+
+Tasks:
+
+Multimodal Feature Preparation: Prepare and extract multimodal features (audio + lyrics).
+
+Multimodal VAE Training: Train Beta-VAE or CVAE on fused multimodal features.
+
+Clustering and Evaluation: Perform clustering on latent vectors and evaluate metrics.
+
+Visualizations: Visualize the results and latent space using dimensionality reduction techniques (e.g., UMAP, t-SNE).
+
+Baseline Comparison: Compare the VAE-based models with baseline clustering methods (PCA, Autoencoder).
+
+Script Range: Scripts 18-22
+
+Data Files:
+
+data/hard/audio_mfcc_stats.npy: MFCC audio features
+
+data/hard/lyrics_emb.npy: Lyrics embeddings
+
+data/hard/track_ids.npy: Track IDs
+
+data/hard/genre_idx.npy: Genre indices
+
+data/hard/lang_idx.npy: Language indices
+
+data/hard/latents_mu.npy: Latent vectors from trained models
+
+Results:
+
+results/hard/baseline_comparison.csv: Comparison of clustering methods (VAE vs. Baselines)
+
+results/hard/plots/training_curve.png: Training curve plot
+
+results/hard/plots/recon_examples.png: Reconstruction examples plot
+
+results/hard/plots/baseline_bars.png: Baseline comparison bar plot
+
+results/hard/cluster_labels_kmeans.npy: Cluster labels from KMeans
+
+results/hard/cluster_composition_by_genre.csv: Cluster composition table
+
+results/hard/plots/latent_by_cluster.png: Latent space projection colored by KMeans clusters
+
+results/hard/plots/latent_by_genre.png: Latent space projection colored by true genre
+
+results/hard/plots/latent_by_language.png: Latent space projection colored by detected language
+
+results/hard/plots/cluster_dist_over_genres.png: Cluster distribution over genres
+
+results/hard/plots/cluster_dist_over_languages.png: Cluster distribution over languages
+
+Model:
+
+models/hard/beta_vae_multimodal.pt: Trained Beta-VAE model (if used)
+
+models/hard/cvae_multimodal.pt: Trained CVAE model (if used)
+
+How to Use the Scripts
+
 Each script comes with configurable options via command-line arguments. Below is a general guide to some key options:
 
 Manifest: Specify the path to your music manifest CSV file.
@@ -141,7 +212,6 @@ Manifest: Specify the path to your music manifest CSV file.
 Latents Path: Path to the latent features (e.g., data/hard/latents_mu.npy).
 
 Tag: An optional tag for saving outputs with a suffix.
-
 Example command:
 
 python scripts/20_cluster_and_evaluate_hard.py --latents_path data/hard/latents_mu.npy --k 5 --tag "experiment_1"
