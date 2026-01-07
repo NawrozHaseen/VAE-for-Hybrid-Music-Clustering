@@ -69,7 +69,7 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 **Tasks**:
 
-- `Data Download and Manifest Creation`: Download audio files and metadata, and create a manifest.
+- `Data Download and Manifest Creation`: Download audio files, lyrics, transcriptions and metadata, and create a manifest.
 
 - `Feature Extraction`: Extract basic audio features like MFCC and lyrics embeddings.
 
@@ -101,7 +101,7 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 **Model**:
 
-results/vae_basic/vae_basic.pt: Trained VAE model
+`results/vae_basic/vae_basic.pt`: Trained VAE model
 
 ## Medium Tasks (Scripts 10-17)
 
