@@ -16,11 +16,12 @@ Make sure you have the following installed:
 
 You can install the required dependencies by running:
 
-
+``` bash
 pip install -r requirements.txt
-
+```
 # Directory Structure
 
+```bash
 project/
 ├── data/
 │   ├── hard/               # Processed data and features
@@ -32,38 +33,44 @@ project/
 ├── scripts/                # Python scripts for each task
 ├── requirements.txt        # Required Python libraries
 └── README.md               # Project description
+```
 
 # Setup Instructions
 Create and activate a Virtual Environment:
 
+```bash
 python -m venv .venv
 .venv\Scripts\activate  # Windows
 source .venv/bin/activate  # macOS/Linux
+```
 
 # Install Dependencies:
 
 Install the required Python packages:
 
+```bash
 pip install -r requirements.txt
+```
 
 # Download and Prepare Data:
 
 Download the FMA dataset and other required data using:
 
-
+```bash
 python scripts/00_download_fma.py
+```
 This will download the audio and metadata files, and prepare the data/fma_manifest_3k_5genres.csv manifest.
 
 # Data Files
 The following files are used in the project:
 
-Audio Files: Located in data/fma_small/ (e.g., 000/000002.mp3)
+- **Audio Files**: Located in data/fma_small/ (e.g., 000/000002.mp3)
 
-Metadata: Located in data/fma_metadata/ (e.g., tracks.csv, genres.csv)
+- **Metadata**: Located in data/fma_metadata/ (e.g., tracks.csv, genres.csv)
 
-Manifest: Located in data/fma_manifest_3k_6genres.csv
+- **Manifest**: Located in data/fma_manifest_3k_6genres.csv
 
-Lyrics Files: Located in data/lyrics/
+- **Lyrics Files**: Located in data/lyrics/
 
 # Training Models
 To train the models, use the following scripts:
