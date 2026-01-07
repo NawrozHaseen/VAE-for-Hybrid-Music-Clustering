@@ -19,7 +19,7 @@ You can install the required dependencies by running:
 ``` bash
 pip install -r requirements.txt
 ```
-# Directory Structure
+## Directory Structure
 
 ```bash
 project/
@@ -35,7 +35,7 @@ project/
 └── README.md               # Project description
 ```
 
-# Setup Instructions
+## Setup Instructions
 Create and activate a Virtual Environment:
 
 ```bash
@@ -44,7 +44,7 @@ python -m venv .venv
 source .venv/bin/activate  # macOS/Linux
 ```
 
-# Install Dependencies:
+## Install Dependencies:
 
 Install the required Python packages:
 
@@ -52,7 +52,7 @@ Install the required Python packages:
 pip install -r requirements.txt
 ```
 
-# Download and Prepare Data:
+## Download and Prepare Data:
 
 Download the FMA dataset and other required data using:
 
@@ -61,11 +61,11 @@ python scripts/00_download_fma.py
 ```
 This will download the audio and metadata files, and prepare the data/fma_manifest_3k_6genres.csv manifest.
 
-# Task Types Overview
+## Task Types Overview
 
 The project is divided into three main task types: Easy, Medium, and Hard. These tasks represent different stages of data processing, feature extraction, model training, and evaluation. Below are the task scripts for each type and the corresponding data/results/model files generated.
 
-# Easy Tasks (Scripts 00-09)
+## Easy Tasks (Scripts 00-09)
 
 **Tasks**:
 
@@ -103,7 +103,7 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 results/vae_basic/vae_basic.pt: Trained VAE model
 
-# Medium Tasks (Scripts 10-17)
+## Medium Tasks (Scripts 10-17)
 
 **Tasks**:
 
@@ -143,7 +143,7 @@ results/vae_basic/vae_basic.pt: Trained VAE model
 
 `models/vae_conv_mm_medium/vae_conv_mm_medium.pt`: Trained multimodal VAE model
 
-#Hard Tasks (Scripts 18-22)
+## Hard Tasks (Scripts 18-22)
 
 **Tasks**:
 
@@ -203,7 +203,7 @@ results/vae_basic/vae_basic.pt: Trained VAE model
 
 `models/hard/cvae_multimodal.pt`: Trained CVAE model (if used)
 
-# How to Use the Scripts
+## How to Use the Scripts
 
 Each script comes with configurable options via command-line arguments. Below is a general guide to some key options:
 
@@ -217,7 +217,7 @@ Example command:
 
 `python scripts/20_cluster_and_evaluate_hard.py --latents_path data/hard/latents_mu.npy --k 5 --tag "experiment_1"`
 
-# Additional Notes
+## Additional Notes
 - `Training and Evaluation`: Make sure to train your models first (VAE, Beta-VAE, or CVAE) before performing clustering.
 
 - `Known Issues`: If UMAP or t-SNE is not installed, the projection step will default to PCA.
