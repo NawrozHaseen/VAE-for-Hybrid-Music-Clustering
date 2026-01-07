@@ -1,0 +1,18 @@
+﻿# Python
+.venv/
+__pycache__/
+*.pyc
+# Secrets
+.env
+# Data / outputs
+data/
+results/
+*.npy
+*.pt
+*.joblib
+*.pkl
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
