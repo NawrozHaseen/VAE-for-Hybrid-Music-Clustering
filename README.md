@@ -175,7 +175,7 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 **Results**:
 
-`results/hard/baseline_comparison.csv`: Comparison of clustering methods (VAE vs. Baselines)
+`results/hard/baseline_comparison.csv`: Comparison of clustering methods (Beta VAE vs. Baselines)
 
 `results/hard/plots/training_curve.png`: Training curve plot
 
@@ -197,9 +197,12 @@ The project is divided into three main task types: Easy, Medium, and Hard. These
 
 `results/hard/plots/cluster_dist_over_languages.png`: Cluster distribution over languages
 
+**Note**: 
+There are other, model-specific (BETA VAE or CVAE) or hyperparameter specific (e.g. b4l16) csv and png files for each for further model and hyperparameter testing as well inside the `results/hard/` directory.
+
 **Model**:
 
-`models/hard/beta_vae_multimodal.pt`: Trained Beta-VAE model (if used)
+`models/hard/beta_vae_multimodal.pt`: Trained Beta-VAE model (if used. also used BY DEFAULT if not model specified in terminal)
 
 `models/hard/cvae_multimodal.pt`: Trained CVAE model (if used)
 
@@ -213,13 +216,48 @@ Each script comes with configurable options via command-line arguments. Below is
 
 - `Tag`: An optional tag for saving outputs with a suffix.
 
-Example command:
+Example commands:
 
-`python scripts/20_cluster_and_evaluate_hard.py --latents_path data/hard/latents_mu.npy --k 5 --tag "experiment_1"`
+```bash
+python scripts/20_cluster_and_evaluate_hard.py # To run the file as-is using default values
+```
+
+```bash
+python scripts/20_cluster_and_evaluate_hard.py --latents_path data/hard/latents_mu.npy --k 5 --tag "experiment_1"   # To tweak parameters
+```
+
+## Note:
+
+For script 09, you need to re-run script 06 if you haven't to generate MFCC features as this is necessary to use MFCC features in their original form to use as comparison to show how the VAE model and baseline methods like PCA perform. To re-extract, simply use:
+
+```bash
+python scripts/06_train_basic_vae_easy.py
+```
+
+For scripts 19-22, if you want to use CVAE instead of the default BETA VAE used here, you need to specifically mention using:
+
+```bash
+python scripts/19_train_beta_cvae_multimodal_hard.py --use_cvae --tag "cvae"
+```
+
+or you wanted to use some hyperparameter tuning for the files, you can specify those parameters as well, for example:
+
+```bash
+python scripts/19_train_beta_cvae_multimodal_hard.py --use_cvae --tag "cvae" --beta 4.0 --latent_dim 16
+```
+
+or if you wanted to do hyperparameter tuning using the default BETA VAE model instead, use:
+
+```bash
+python scripts/19_train_beta_cvae_multimodal_hard.py --tag "beta" --beta 4.0 --latent_dim 16
+```
+
 
 ## Additional Notes
 - `Training and Evaluation`: Make sure to train your models first (VAE, Beta-VAE, or CVAE) before performing clustering.
 
 - `Known Issues`: If UMAP or t-SNE is not installed, the projection step will default to PCA.
+
+- `Important to Note`: If no model specified, BETA VAE will be used as model by default in scripts 19-22, 
 
 - `Future Work`: You may want to explore hyperparameter tuning for clustering and model training.
