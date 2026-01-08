@@ -8,6 +8,8 @@ Due to file size limitations, the dataset and report are hosted on Google Drive.
 - Dataset (Google Drive):  
   https://drive.google.com/drive/folders/14hkqJZD4TmmDFIiUznkCZId2mjcsY0rs?usp=drive_link
 
+**NOTE**: You don't need to download the dataset, just run the script 00_download_fma_small.py and it will begin downloading.
+
 
 ## Prerequisites
 
@@ -23,7 +25,7 @@ Make sure you have the following installed:
   - `tqdm`: For progress bars
   - `matplotlib`: For visualizations
 
-You can install the required dependencies by running:
+There are a bunch of other prerequisites that you can install the required dependencies by running:
 
 ``` bash
 pip install -r requirements.txt
