@@ -1,0 +1,35 @@
+{
+  "config": {
+    "vae_out_dir": "results/vae_basic",
+    "kmeans_out_dir": "results/kmeans_vae",
+    "out_dir": "results/compare_metrics",
+    "k": 5,
+    "seed": 42,
+    "n_init": 20
+  },
+  "vae_latent_shape": [
+    2924,
+    16
+  ],
+  "pca_components": 16,
+  "outputs": {
+    "metrics_csv": "results\\compare_metrics\\metrics.csv",
+    "metrics_json": "results\\compare_metrics\\metrics.json",
+    "labels_pca": "results\\compare_metrics\\labels_pca_kmeans.npy",
+    "pca_plot": "results\\compare_metrics\\plots\\pca_variance.png"
+  },
+  "metrics": [
+    {
+      "method": "VAE_latent + KMeans",
+      "k": 5,
+      "silhouette": 0.2605941593647003,
+      "calinski_harabasz": 1325.7812282974176
+    },
+    {
+      "method": "PCA(16) + KMeans",
+      "k": 5,
+      "silhouette": 0.2605941593647003,
+      "calinski_harabasz": 1325.7812052851189
+    }
+  ]
+}

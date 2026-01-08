@@ -1,0 +1,53 @@
+{
+  "config": {
+    "vae_out_dir": "results/vae_basic",
+    "kmeans_out_dir": "results/kmeans_vae",
+    "out_dir": "results/compare_metrics",
+    "k": 5,
+    "seed": 42,
+    "n_init": 20
+  },
+  "data_info": {
+    "vae_latent_shape": [
+      2924,
+      16
+    ],
+    "mfcc_features_available": true,
+    "mfcc_features_shape": [
+      2924,
+      80
+    ]
+  },
+  "comparisons": {
+    "vae_kmeans": {
+      "metrics": {
+        "silhouette": 0.2605941593647003,
+        "calinski_harabasz": 1325.7812282974176
+      },
+      "note": "Baseline VAE method"
+    },
+    "pca_mfcc_kmeans": {
+      "metrics": {
+        "silhouette": 0.11746445298194885,
+        "calinski_harabasz": 540.3583143431367
+      },
+      "explained_variance": 0.7563409805297852,
+      "note": "PCA applied to original MFCC features"
+    },
+    "pca_latents_kmeans": {
+      "metrics": {
+        "silhouette": 0.2605941593647003,
+        "calinski_harabasz": 1325.7812052851189
+      },
+      "explained_variance": 1.0,
+      "note": "PCA applied to VAE latents (shows why original results were identical)"
+    }
+  },
+  "outputs": {
+    "metrics_csv": "results\\compare_metrics\\metrics.csv",
+    "labels_pca_mfcc": "results\\compare_metrics\\labels_pca_mfcc.npy",
+    "labels_pca_latents": "results\\compare_metrics\\labels_pca_latents.npy",
+    "plot_pca_mfcc": "results\\compare_metrics\\plots\\pca_variance_mfcc.png",
+    "plot_pca_latents": "results\\compare_metrics\\plots\\pca_variance_latents.png"
+  }
+}

@@ -1,0 +1,11 @@
+repr=.\data\lyrics_embeddings.npy
+ids=.\data\lyrics_track_ids.npy
+method=dbscan
+eps=0.4
+min_samples=5
+proj=pca
+standardize=True
+pre_pca_dim=50
+n_clusters_found=2
+n_noise=1693
+label_col=genre

@@ -1,0 +1,18 @@
+{
+  "manifest": "data/fma_manifest_combined_text_only.csv",
+  "out_dir": "results/vae_basic",
+  "sample_rate": 22050,
+  "duration_sec": 30.0,
+  "n_mfcc": 40,
+  "hop_length": 512,
+  "n_fft": 2048,
+  "batch_size": 128,
+  "epochs": 40,
+  "lr": 0.001,
+  "latent_dim": 16,
+  "hidden_dim": 256,
+  "beta": 1.0,
+  "seed": 42,
+  "num_workers": 0,
+  "cache_features": true
+}

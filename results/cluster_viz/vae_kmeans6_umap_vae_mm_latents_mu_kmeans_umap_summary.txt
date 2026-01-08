@@ -1,0 +1,10 @@
+repr=.\data\vae_mm_latents_mu.npy
+ids=.\data\vae_mm_latents_track_ids.npy
+method=kmeans
+n_clusters=6
+proj=umap
+standardize=True
+pre_pca_dim=50
+n_clusters_found=6
+n_noise=0
+label_col=genre
