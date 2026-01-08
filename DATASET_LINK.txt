@@ -1,4 +1,6 @@
 Dataset Google Drive Link:
 https://drive.google.com/drive/folders/14hkqJZD4TmmDFIiUznkCZId2mjcsY0rs?usp=drive_link
 
+Due to file size limitations, the dataset and report are hosted on Google Drive. Files (fma_dataset_small and fma_metadata) can be unzipped and looked through. They contain Free Music Archive's music file samples and their respective metadata.
+
 NOTE: You don't need to download the dataset, just run the script 00_download_fma_small.py and it will begin downloading.
