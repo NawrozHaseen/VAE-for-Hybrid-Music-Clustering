@@ -1,5 +1,14 @@
 # VAE-for-Hybrid-Music-Clustering
 This project aims to perform hybrid music clustering using Variational Autoencoders (VAE) and other clustering techniques like KMeans, Agglomerative, and DBSCAN. The pipeline processes audio and lyrics data, extracts features, trains models, and evaluates the results.
+
+## Dataset Access
+
+Due to file size limitations, the dataset and report are hosted on Google Drive. Files (fma_dataset_small and fma_metadata) can be unzipped and looked through. They contain Free Music Archive's music file samples and their respective metadata.
+
+- Dataset (Google Drive):  
+  https://drive.google.com/drive/folders/14hkqJZD4TmmDFIiUznkCZId2mjcsY0rs?usp=drive_link
+
+
 ## Prerequisites
 
 Make sure you have the following installed:
@@ -19,6 +28,7 @@ You can install the required dependencies by running:
 ``` bash
 pip install -r requirements.txt
 ```
+
 ## Directory Structure
 
 ```bash
