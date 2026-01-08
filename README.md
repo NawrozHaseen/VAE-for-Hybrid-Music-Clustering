@@ -68,7 +68,7 @@ pip install -r requirements.txt
 Create a ```.env``` file inside the scripts directory to contain the Genius token to run the api that would be used to fetch lyrics from Genius.
 
 ```bash
-SS_TOKEN=Add token here //get a token from genius from their developer website and replace 'Add token here' with it
+SS_TOKEN=Add token here #get a token from genius from their developer website and replace 'Add token here' with it
 ```
 
 ## Download and Prepare Data:
