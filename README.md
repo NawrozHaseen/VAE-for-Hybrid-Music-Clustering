@@ -68,7 +68,7 @@ pip install -r requirements.txt
 Download the FMA dataset and other required data using:
 
 ```bash
-python scripts/00_download_fma.py
+python scripts/00_download_fma_small.py
 ```
 This will download the audio and metadata files, and prepare the data/fma_manifest_3k_6genres.csv manifest.
 
