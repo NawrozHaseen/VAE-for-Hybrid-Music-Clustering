@@ -7,6 +7,8 @@ Due to file size limitations, the dataset are hosted on Google Drive. Files (fma
 
 - Dataset (Google Drive):  
   https://drive.google.com/drive/folders/14hkqJZD4TmmDFIiUznkCZId2mjcsY0rs?usp=drive_link
+  
+**NOTE**: You don't need to download the dataset, just run the script ```00_download_fma_small.py``` and it will begin downloading.
 
 ## Project Report
 
@@ -14,7 +16,7 @@ The findings and analysis of the result has been articulated thoroughly in the f
 - Report (Google Drive):
   https://drive.google.com/file/d/1gIPO6Bl0XOAoU9kt4zOlU9IEPfW6IQWA/view
 
-**NOTE**: You don't need to download the dataset, just run the script ```00_download_fma_small.py``` and it will begin downloading.
+
 
 
 ## Prerequisites
