@@ -3,10 +3,16 @@ This project aims to perform hybrid music clustering using Variational Autoencod
 
 ## Dataset Access
 
-Due to file size limitations, the dataset and report are hosted on Google Drive. Files (fma_dataset_small and fma_metadata) can be unzipped and looked through. They contain Free Music Archive's music file samples and their respective metadata.
+Due to file size limitations, the dataset are hosted on Google Drive. Files (fma_dataset_small and fma_metadata) can be unzipped and looked through. They contain Free Music Archive's music file samples and their respective metadata.
 
 - Dataset (Google Drive):  
   https://drive.google.com/drive/folders/14hkqJZD4TmmDFIiUznkCZId2mjcsY0rs?usp=drive_link
+
+## Project Report
+
+The findings and analysis of the result has been articulated thoroughly in the following report.
+- Report (Google Drive):
+  https://drive.google.com/file/d/1gIPO6Bl0XOAoU9kt4zOlU9IEPfW6IQWA/view
 
 **NOTE**: You don't need to download the dataset, just run the script ```00_download_fma_small.py``` and it will begin downloading.
 
